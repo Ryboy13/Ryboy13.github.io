@@ -48,61 +48,103 @@
   nav li:first-child a {
     color: #fff;
     font-weight: 800;
+    font-family: "Vast Shadow", serif;
   }
   nav li:first-child a:hover {
     background-color: #255d2b;
     color: #000;
   }
+  h1 {
+    font-family: "Vast Shadow", serif;
+    font-weight: 500;
+    font-style: normal;
+  }
+  h3 {
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 100;
+    font-style: italic;
+  }
   body {
-    background-color: rgb(115, 164, 125);
     margin: 0;
     padding: 0;
     font-size: 30px;
-    height:100vh; 
+    height:100vh; /*this line sets the height of the body to be equal to 100% of the height of the viewport*/
     }
     main {
-    height:100%; 
-    display: flex; 
-    justify-content: center; 
-    align-items: center; 
+    height:100%; /*this line sets main to be 100% of its parent (body)*/
+    display: flex; /*flex display applies to the children of an html block element*/
+    justify-content: center; /*justify-content applies to the children of a display: flex parent*/
+    align-items: center; /*align-items applies to the children of a display:flex parent*/
     }
-body {
-    margin: 0;
-    padding: 0;
-    font-size: 30px;
-    height:100vh; 
-}
-main {
-    height:100%; 
-    display: flex; 
-    justify-content: center; 
-    align-items: center; 
-}
-main {
-    font-family: 'Vast Shadow', cursive;
-    .vast-shadow-regular {
-        font-family: "Vast Shadow", serif;
-        font-weight: 400;
-        font-style: normal;
-        font-size:xx-large;
-      }
-      body {
-        background-image: src("paper.gif");
-      }
     
-}
-h1 {
-    font-family: 'Vast Shadow', cursive;
-    .vast-shadow-regular {
-        font-family: "Vast Shadow", serif;
-        font-weight: 400;
-        font-style: normal;
-        font-size:xx-large;
-      }
+    section {
+              /*the centering doesn't happen here, it happens in the parent element, in this case 'main'*/
+    }
     
+  main {
+    padding: 20px; /* Add padding inside the body */
+    margin: 0; /* Reset margin outside the body */
 }
-.responsive ul {
+h1 .vast-shadow-regular {
+  font-family: "Vast Shadow", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+h1,h2,h3,h4,h5,h6{
+  color:#000000;
+  letter-spacing:0.02em;
+  padding-bottom:10px;
+}
+
+p {
+  font-size:1em;
+  line-height:1.4em;
+}
+
+/* Layout Styles */
+
+.gear {
+/*   background-color:rgba(0,0,0,0.1); */
+  margin:50px 0px;
+  padding:20px 30px;
+}
+
+.textbox-reg {
+  max-width: 30%;
+}
+
+
+.fixed ul {
 	display: grid;
-	grid-template-columns: repeat(autofit, minmax(120px, 1fr));
-	grid-gap: 0.25rem;
+	grid-template-columns: repeat(4, 100px);
+	grid-gap: 4px;
+	width: calc(400px + 12px + 4.4rem);
 }
+
+@media (max-width: 660px) {
+	.fixed ul {
+		grid-template-columns: repeat(3, 100px);
+		width: calc(300px + 8px + 4.4rem);
+	}
+}
+
+@media (max-width: 490px) {
+	.fixed ul {
+		grid-template-columns: repeat(2, 100px);
+		width: calc(200px + 4px + 4.4rem);
+	}
+}
+
+@media (max-width: 320px) 
+	{fixed ul {
+		grid-template-columns: repeat(1, 100px);
+		width: calc(100px + 4.4rem);
+	}
+
+footer {
+    text-align: center;
+    padding: 10px;
+    background-color: #333;
+    color: #fff;
+}
+
